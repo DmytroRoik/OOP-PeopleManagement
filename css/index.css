@@ -1,0 +1,66 @@
+.hidden{
+  display:none;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+label{
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  padding: 10px;
+  margin:5px;
+  font-size: 20px;
+  text-align: center;
+}
+input[type=radio]{
+  width: 23px;
+}
+label input{
+  height: 30px;
+  border: none;
+  text-align: center;
+  border-bottom: 1px solid green;
+  background-color: rgba(190,230,120,.2);
+}
+label input:focus{
+  padding: 3px;
+}
+
+label input:invalid{
+  border:1px solid red;
+}
+.userSexCheckGroup{
+  display: flex;
+  flex-direction: column;
+}
+.userSexCheckGroup label{
+  width: 150px;
+  font-size: 26px;
+}
+section#users-table{
+  display: flex;
+  flex-direction: column;
+}
+.table-headers,.table-row{
+display: flex;
+flex-direction: row;
+}
+.table-head{
+  width: 100%;
+  text-align: center;
+  border:2px solid black;
+  font-size: 25px;
+  text-transform: capitalize;
+  padding: 5px;
+}
+.table-cell{
+  width:16.67%;
+  height: 40px;
+  overflow-wrap: break-word;
+  text-align: center;
+  font-size: 22px;
+}

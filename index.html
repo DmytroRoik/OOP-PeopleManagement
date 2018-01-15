@@ -6,7 +6,51 @@
 	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-	
-	<script src="js/app.js"></script>
+	<section id="form-createUser">
+   <form onsubmit="createUser()" >
+     <label for="userName">name:
+      <input type="text" id="userName" placeholder="username">
+    </label>
+    <div class="userSexCheckGroup">
+      <label for="uSexMale">
+        <input type="radio" name="uSex" id="uSexMale" value="male" checked>Male
+      </label>
+      <label for="uSexFemale">
+        <input type="radio" name="uSex" id="uSexFemale" value="female">Female
+      </label>
+    </div>
+    <label for="userBirth">date:
+      <input type="text" id="userBirth" placeholder="25/01/2018">
+    </label>
+    <label for="userAddr">address:
+      <input type="text" id="userAddr">
+    </label>
+    <label for="userPhone">phone:
+      <input type="text" id="userPhone" pattern="^\+\d{12}" placeholder="+380661234567">
+    </label>
+    <label for="userEmail">email:
+      <input type="text" id="userEmail">
+    </label>
+    <input type="submit" value="Create">
+  </form>
+</section>
+<section id="users-table">
+  <h3>Users list</h3>
+  <div class="table">
+    <div class="table-headers">
+      <div class="table-head">name</div>
+      <div class="table-head">sex</div>
+      <div class="table-head">birth</div>
+      <div class="table-head">address</div>
+      <div class="table-head">phone</div>
+      <div class="table-head">email</div>
+    </div>
+    <div class="table-body">
+    </div>
+  </div>
+</section>
+<script src="js/superUser.js"></script>
+<script src="js/user.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
