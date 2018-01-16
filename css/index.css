@@ -1,9 +1,19 @@
 .hidden{
   display:none;
 }
+.container{
+  margin:0 auto;
+  width: 95%;
+}
 form{
   display: flex;
   flex-direction: column;
+  background-image: url(https://i.stack.imgur.com/s3BcM.png);
+  width: 450px;
+  height: 380px;
+  padding: 20px;
+  background-size: contain;
+
   align-items: center;
 }
 label{
@@ -12,26 +22,41 @@ label{
   justify-content: space-between;
   width: 250px;
   padding: 10px;
-  margin:5px;
   font-size: 20px;
   text-align: center;
 }
 input[type=radio]{
-  width: 23px;
+  width: 20px;
 }
-label input{
+label input,label select {
   height: 30px;
+  width: 150px;
   border: none;
   text-align: center;
-  border-bottom: 1px solid green;
-  background-color: rgba(190,230,120,.2);
+  border-bottom: 2px solid green;
 }
 label input:focus{
-  padding: 3px;
+  padding: 5px;
 }
-
 label input:invalid{
-  border:1px solid red;
+  background-color: rgba(255,0,0,.18);
+}
+label input:valid{
+  background-color: rgba(190,230,120,.2);
+}
+input[type=submit]{
+  padding: 5px 25px;
+  margin: 15px;
+  background-image: url(http://res.freestockphotos.biz/pictures/15/15788-illustration-of-a-blank-glossy-rectangular-button-pv.png);
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-color: transparent;
+  user-select: none;
+  border: none;
+  width: 95px;
+  height: 60px;
+  color: white;
+  font-size: 20px;
 }
 .userSexCheckGroup{
   display: flex;
@@ -46,8 +71,15 @@ section#users-table{
   flex-direction: column;
 }
 .table-headers,.table-row{
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-direction: row;
+}
+.table-row{
+  cursor: pointer;
+  padding: 5px 0;
+}
+.table-row:nth-child(2n){
+  background-color: rgba(0,200,100,.2);
 }
 .table-head{
   width: 100%;
@@ -59,7 +91,6 @@ flex-direction: row;
 }
 .table-cell{
   width:16.67%;
-  height: 40px;
   overflow-wrap: break-word;
   text-align: center;
   font-size: 22px;

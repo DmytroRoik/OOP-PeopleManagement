@@ -1,6 +1,6 @@
 var users=[new User({
   name: "uName",
-  isMale: "isMale",
+  sex: "male",
   birth: "uBirth",
   address: "uAddress",
   phone: "uPhone",
@@ -11,11 +11,14 @@ var users=[new User({
 function createUser(){
   event.preventDefault();
   var uName = document.getElementById('userName').value,
-  isMale= document.getElementById('uSexMale').checked,
   uBirth=document.getElementById('userBirth').value,
   uAddress=document.getElementById('userAddr').value,
   uPhone=document.getElementById('userPhone').value,
   uEmail=document.getElementById('userEmail').value;
+
+  var $sexSelect= document.getElementById('userSex');
+  var index=$sexSelect.selectedIndex;
+  var uSex=$sexSelect.options[index].text;
   var erros=[];
   if(!isNameValid(uName))erros.push('name');
   if(!isBirthValid(uBirth))erros.push('birthday');
@@ -27,15 +30,20 @@ function createUser(){
   else{
     var user=new User({
       name: uName,
-      isMale: isMale,
+      sex: uSex,
       birth: uBirth,
       address: uAddress,
       phone: uPhone,
       email: uEmail
     });
-    users.push(user);
-    renderUsers();
-  }
+    if(!users.some(u=>u.isEquals(user))){//uniq user
+     users.push(user);
+     renderUsers();
+     event.target.reset();
+   }
+   else alert('people has duplicate');
+
+ }
 }
 
 function renderUsers(){
@@ -92,9 +100,6 @@ function isPhoneValid(phone){
   return /^\+\d{12}/.test(phone);
 }
 function isEmailValid(email){
-  var count=0;
-  for(let i=0;i<email.length;i++){
-    if(email[i]=='@')count++;
-  }
-  return count==1;
+  if(email.length==0)return false;
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }

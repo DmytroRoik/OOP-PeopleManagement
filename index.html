@@ -6,35 +6,34 @@
 	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-	<section id="form-createUser">
+	<section id="form-createUser" class="container">
    <form onsubmit="createUser()" >
-     <label for="userName">name:
-      <input type="text" id="userName" placeholder="username">
+    <h2>Create person</h2>
+    <label for="userName">name:
+      <input type="text" id="userName" placeholder="username" required>
     </label>
-    <div class="userSexCheckGroup">
-      <label for="uSexMale">
-        <input type="radio" name="uSex" id="uSexMale" value="male" checked>Male
-      </label>
-      <label for="uSexFemale">
-        <input type="radio" name="uSex" id="uSexFemale" value="female">Female
-      </label>
-    </div>
+    <label >Sex
+      <select id="userSex">
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+    </label>
     <label for="userBirth">date:
-      <input type="text" id="userBirth" placeholder="25/01/2018">
+      <input type="text" id="userBirth" placeholder="25/01/2018" required>
     </label>
     <label for="userAddr">address:
-      <input type="text" id="userAddr">
+      <input type="text" id="userAddr" required>
     </label>
     <label for="userPhone">phone:
-      <input type="text" id="userPhone" pattern="^\+\d{12}" placeholder="+380661234567">
+      <input type="text" id="userPhone" pattern="\+\d{12}" placeholder="+380661234567"  title="Enter your phone number in format +380111234567" required>
     </label>
     <label for="userEmail">email:
-      <input type="text" id="userEmail">
+      <input type="email" id="userEmail" required placeholder="test@asdas.asdasd">
     </label>
-    <input type="submit" value="Create">
+    <input type="submit" value="Save">
   </form>
 </section>
-<section id="users-table">
+<section id="users-table" class="container">
   <h3>Users list</h3>
   <div class="table">
     <div class="table-headers">
