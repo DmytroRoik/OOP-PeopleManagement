@@ -1,12 +1,4 @@
-var users=[new User({
-  name: "uName",
-  sex: "male",
-  birth: "uBirth",
-  address: "uAddress",
-  phone: "uPhone",
-  email: "uEmail"
-})];
-
+var users=[];
 
 function createUser(){
   event.preventDefault();
@@ -42,7 +34,6 @@ function createUser(){
      event.target.reset();
    }
    else alert('people has duplicate');
-
  }
 }
 
@@ -85,8 +76,6 @@ function showHideUserInfo(e){
     }
   }
 }
-
-renderUsers();
 function isNameValid(name){
   if(name.length==0||/\d/.test(name))return false;
   return true;

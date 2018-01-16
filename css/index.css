@@ -70,6 +70,11 @@ section#users-table{
   display: flex;
   flex-direction: column;
 }
+.table-headers{
+  border-radius: 10px 10px 0 0;
+  background-color: darkviolet;
+  overflow: hidden;
+}
 .table-headers,.table-row{
   display: flex;
   flex-direction: row;
