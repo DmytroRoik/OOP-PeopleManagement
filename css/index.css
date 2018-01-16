@@ -10,9 +10,9 @@ form{
   flex-direction: column;
   background-image: url(https://i.stack.imgur.com/s3BcM.png);
   width: 450px;
-  height: 380px;
+  height: 390px;
   padding: 20px;
-  background-size: contain;
+  background-size: cover;
 
   align-items: center;
 }
